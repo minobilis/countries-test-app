@@ -1,7 +1,8 @@
-package rosh.ivan.contries
+package rosh.ivan.contries.feature.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import rosh.ivan.contries.R
 
 class MainActivity : AppCompatActivity() {
 
