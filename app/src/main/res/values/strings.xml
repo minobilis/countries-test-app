@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Contries</string>
+    <string name="app_name">Countries</string>
+    <string name="error_no_internet">No internet</string>
+    <string name="error_unknown">Unknown error</string>
 </resources>
