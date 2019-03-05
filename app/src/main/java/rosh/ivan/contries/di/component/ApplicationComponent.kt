@@ -1,4 +1,4 @@
-package rosh.ivan.contries.di
+package rosh.ivan.contries.di.component
 
 import dagger.BindsInstance
 import dagger.Component

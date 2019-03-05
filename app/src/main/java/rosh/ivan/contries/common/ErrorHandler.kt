@@ -1,6 +1,7 @@
 package rosh.ivan.contries.common
 
 import rosh.ivan.contries.R
+import rosh.ivan.countries.domain.abstraction.ResourceProvider
 import java.net.UnknownHostException
 import javax.inject.Inject
 

@@ -1,11 +1,11 @@
 package rosh.ivan.contries.common
 
 import android.content.Context
+import rosh.ivan.countries.domain.abstraction.ResourceProvider
 import javax.inject.Inject
 
-class ResourceProvider @Inject constructor(private val context: Context?) {
-
-    fun getString(stringResourceId: Int): String {
+class AndroidResourceProvider @Inject constructor(private val context: Context?) : ResourceProvider {
+    override fun getString(stringResourceId: Int): String {
         return if (context != null) {
             context.resources.getString(stringResourceId)
 
@@ -14,7 +14,7 @@ class ResourceProvider @Inject constructor(private val context: Context?) {
         }
     }
 
-    fun getString(stringResourceId: Int, vararg formatArgs: Any): String {
+    override fun getString(stringResourceId: Int, vararg formatArgs: Any): String {
         return if (context != null) {
             context.resources.getString(stringResourceId, *formatArgs)
 
@@ -24,6 +24,6 @@ class ResourceProvider @Inject constructor(private val context: Context?) {
     }
 
     companion object {
-        val MISSING_STRING_RESOURCE = "Missing text resource"
+        const val MISSING_STRING_RESOURCE = "Missing text resource"
     }
 }

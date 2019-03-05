@@ -18,8 +18,9 @@ import io.reactivex.exceptions.OnErrorNotImplementedException
 import io.reactivex.plugins.RxJavaPlugins
 import io.reactivex.rxkotlin.subscribeBy
 import rosh.ivan.contries.common.ErrorHandler
-import rosh.ivan.contries.common.ResourceProvider
+import rosh.ivan.contries.common.AndroidResourceProvider
 import rosh.ivan.contries.common.dpToPx
+import rosh.ivan.countries.domain.abstraction.ResourceProvider
 import javax.inject.Inject
 
 /**

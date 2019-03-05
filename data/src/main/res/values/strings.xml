@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">data</string>
+    <string name="error_missing_country_name">Missing country name</string>
 </resources>

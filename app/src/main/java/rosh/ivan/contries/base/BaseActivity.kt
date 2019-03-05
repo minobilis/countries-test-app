@@ -6,7 +6,8 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import dagger.android.support.DaggerAppCompatActivity
 import rosh.ivan.contries.common.ErrorHandler
-import rosh.ivan.contries.common.ResourceProvider
+import rosh.ivan.contries.common.AndroidResourceProvider
+import rosh.ivan.countries.domain.abstraction.ResourceProvider
 import javax.inject.Inject
 
 abstract class BaseActivity : DaggerAppCompatActivity() {
