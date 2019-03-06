@@ -1,4 +1,4 @@
-package maatayim.com.brainsway.di.module
+package rosh.ivan.contries.di.module
 
 import android.content.Context
 import dagger.Binds

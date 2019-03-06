@@ -1,4 +1,4 @@
-package maatayim.com.brainsway.common.scheduler
+package rosh.ivan.contries.common.scheduler
 
 import io.reactivex.Scheduler
 

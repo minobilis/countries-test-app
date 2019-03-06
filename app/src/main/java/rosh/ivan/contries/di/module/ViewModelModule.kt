@@ -7,7 +7,9 @@ import androidx.lifecycle.ViewModelProvider
 import dagger.Binds
 import dagger.MapKey
 import dagger.Module
+import dagger.multibindings.IntoMap
 import rosh.ivan.contries.di.factory.CountriesViewModelFactory
+import rosh.ivan.contries.feature.list.CountriesViewModel
 import javax.inject.Singleton
 import kotlin.reflect.KClass
 
@@ -22,4 +24,10 @@ abstract class ViewModelModule {
     @Singleton
     @Binds
     internal abstract fun bindViewModelFactory(factory: CountriesViewModelFactory): ViewModelProvider.Factory
+
+    //ViewModels
+    @Binds
+    @IntoMap
+    @ViewModelKey(CountriesViewModel::class)
+    internal abstract fun loginSelectionViewModel(viewModel: CountriesViewModel): ViewModel
 }

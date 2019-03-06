@@ -3,4 +3,10 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="hint">#636363</color>
+    <color name="main">#292929</color>
+    <color name="colorShade">#ba02123b</color>
+    <color name="colorEastBay">#3D4F7E</color>
+
 </resources>

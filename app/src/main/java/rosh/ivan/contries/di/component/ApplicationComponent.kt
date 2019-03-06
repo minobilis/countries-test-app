@@ -5,7 +5,6 @@ import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import dagger.android.support.DaggerApplication
-import maatayim.com.brainsway.di.module.*
 import rosh.ivan.contries.common.App
 import rosh.ivan.contries.di.module.*
 import javax.inject.Singleton

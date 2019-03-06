@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface RestClient {
 
-    @GET("all")
+    @GET("all?fields=name;nativeName;population;flag")
     Single<List<CountryRemote>> getAllCountries();
 }

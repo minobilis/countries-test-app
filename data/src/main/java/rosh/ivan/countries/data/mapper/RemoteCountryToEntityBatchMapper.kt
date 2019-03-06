@@ -8,10 +8,17 @@ import rosh.ivan.countries.data.R
 import rosh.ivan.countries.domain.abstraction.ResourceProvider
 
 class RemoteCountryToEntityBatchMapper @Inject constructor(
-    private val resourceProvider: ResourceProvider
+        private val resourceProvider: ResourceProvider
 ) : Function<List<CountryRemote>, List<Country>> {
 
     override fun apply(remoteList: List<CountryRemote>): List<Country> {
-        return remoteList.map { Country(it.name ?: resourceProvider.getString(R.string.error_missing_country_name)) }
+        return remoteList.map {
+            Country(
+                    id = it.numericCode?: "unknown",
+                    name = it.name
+                            ?: resourceProvider.getString(R.string.error_missing_country_name),
+                    population = it.population?.toLong() ?: 0L
+            )
+        }
     }
 }
