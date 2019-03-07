@@ -29,5 +29,5 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(CountriesViewModel::class)
-    internal abstract fun loginSelectionViewModel(viewModel: CountriesViewModel): ViewModel
+    internal abstract fun CountriesViewModel(viewModel: CountriesViewModel): ViewModel
 }

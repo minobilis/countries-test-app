@@ -6,7 +6,7 @@ data class CountryRemote(
     @SerializedName("alpha2Code") val alpha2Code: String? = null,
     @SerializedName("alpha3Code") val alpha3Code: String? = null,
     @SerializedName("alternativeSpellings") val alternativeSpellings: List<String?>? = null,
-    @SerializedName("area") val area: Int? = null,
+    @SerializedName("area") val area: Double? = null,
     @SerializedName("borders") val borders: List<String?>? = null,
     @SerializedName("callingCodes") val callingCodes: List<String?>? = null,
     @SerializedName("capital") val capital: String? = null,

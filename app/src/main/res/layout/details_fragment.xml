@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/english_name_label_hint"
+        style="@style/Hint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/english_name_hint"
+        app:layout_constraintEnd_toStartOf="@+id/local_name_label_hint"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/english_name_label"
+        style="@style/Label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/english_name_label_hint"
+        app:layout_constraintStart_toStartOf="@+id/english_name_label_hint"
+        app:layout_constraintTop_toBottomOf="@+id/english_name_label_hint"
+        tools:text="Ukraine" />
+
+    <TextView
+        android:id="@+id/local_name_label_hint"
+        style="@style/Hint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/local_name_hint"
+        app:layout_constraintBaseline_toBaselineOf="@+id/english_name_label_hint"
+        app:layout_constraintEnd_toStartOf="@+id/population_label_hint"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toEndOf="@+id/english_name_label_hint" />
+
+    <TextView
+        android:id="@+id/local_name_label"
+        style="@style/Label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/local_name_label_hint"
+        app:layout_constraintStart_toStartOf="@+id/local_name_label_hint"
+        app:layout_constraintTop_toBottomOf="@+id/local_name_label_hint"
+        tools:text="Украина" />
+
+    <TextView
+        android:id="@+id/population_label_hint"
+        style="@style/Hint"
+        android:layout_width="61dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/population_hint"
+        android:textAlignment="center"
+        app:layout_constraintBaseline_toBaselineOf="@+id/local_name_label_hint"
+        app:layout_constraintEnd_toStartOf="@id/flag_image_hint"
+        app:layout_constraintStart_toEndOf="@id/local_name_label_hint" />
+
+    <TextView
+        android:id="@+id/population_label"
+        style="@style/Label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/population_label_hint"
+        app:layout_constraintStart_toStartOf="@+id/population_label_hint"
+        app:layout_constraintTop_toBottomOf="@+id/population_label_hint"
+        tools:text="42 M" />
+
+    <TextView
+        android:id="@+id/flag_image_hint"
+        style="@style/Hint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/flag_hint"
+        android:textAlignment="center"
+        app:layout_constraintBaseline_toBaselineOf="@+id/population_label_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/population_label_hint" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="population_label_hint,flag_image_hint,english_name_label,local_name_label,local_name_label_hint,english_name_label_hint,population_label" />
+
+    <TextView
+        android:id="@+id/capital_label_hint"
+        style="@style/Hint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/capital_hint"
+        app:layout_constraintEnd_toStartOf="@+id/regional_blocks_hint"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/barrier1" />
+
+    <TextView
+        android:id="@+id/capital_label"
+        style="@style/Label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/capital_label_hint"
+        app:layout_constraintStart_toStartOf="@+id/capital_label_hint"
+        app:layout_constraintTop_toBottomOf="@+id/capital_label_hint"
+        tools:text="Kiev" />
+
+    <TextView
+        android:id="@+id/regional_blocks_hint"
+        style="@style/Hint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/regional_blocks_hint"
+        app:layout_constraintBaseline_toBaselineOf="@+id/capital_label_hint"
+        app:layout_constraintEnd_toStartOf="@+id/region_hint"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="5"
+        app:layout_constraintStart_toEndOf="@+id/capital_label_hint" />
+
+    <TextView
+        android:id="@+id/regional_blocks_label"
+        style="@style/Label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/regional_blocks_hint"
+        app:layout_constraintStart_toStartOf="@+id/regional_blocks_hint"
+        app:layout_constraintTop_toBottomOf="@+id/regional_blocks_hint"
+        tools:text="No blocks" />
+
+    <TextView
+        android:id="@+id/region_hint"
+        style="@style/Hint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/region_hint"
+        app:layout_constraintBaseline_toBaselineOf="@+id/regional_blocks_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toEndOf="@+id/regional_blocks_hint" />
+
+    <TextView
+        android:id="@+id/region_label"
+        style="@style/Label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/region_hint"
+        app:layout_constraintStart_toStartOf="@+id/region_hint"
+        app:layout_constraintTop_toBottomOf="@+id/region_hint"
+        tools:text="No blocks" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="region_label,capital_label,regional_blocks_hint,capital_label_hint,region_hint,regional_blocks_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/area_hint"
+        style="@style/Hint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/area_hint"
+        app:layout_constraintEnd_toStartOf="@+id/borders_hint"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier2" />
+
+    <TextView
+        android:id="@+id/area_label"
+        style="@style/Label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/area_hint"
+        app:layout_constraintStart_toStartOf="@+id/area_hint"
+        app:layout_constraintTop_toBottomOf="@+id/area_hint"
+        tools:text="100 000" />
+
+    <TextView
+        android:id="@+id/borders_hint"
+        style="@style/Hint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/borders_hint"
+        app:layout_constraintBaseline_toBaselineOf="@+id/area_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="5"
+        app:layout_constraintStart_toEndOf="@+id/area_hint" />
+
+    <TextView
+        android:id="@+id/borders_label"
+        style="@style/Label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/borders_hint"
+        app:layout_constraintStart_toStartOf="@+id/borders_hint"
+        app:layout_constraintTop_toBottomOf="@+id/borders_hint"
+        tools:text="Hungary" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="area_hint,area_label,borders_hint,borders_label" />
+
+    <TextView
+        android:id="@+id/currencies_hint"
+        style="@style/Hint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/currencies_hint"
+        app:layout_constraintEnd_toStartOf="@+id/languages_hint"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/barrier3" />
+
+    <TextView
+        android:id="@+id/currencies_label"
+        style="@style/Label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/currencies_hint"
+        app:layout_constraintStart_toStartOf="@+id/currencies_hint"
+        app:layout_constraintTop_toBottomOf="@+id/currencies_hint"
+        tools:text="UAH" />
+
+    <TextView
+        android:id="@+id/languages_hint"
+        style="@style/Hint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/languages_hint"
+        app:layout_constraintBaseline_toBaselineOf="@+id/currencies_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toEndOf="@+id/currencies_hint" />
+
+    <TextView
+        android:id="@+id/languages_label"
+        style="@style/Label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/languages_hint"
+        app:layout_constraintStart_toStartOf="@+id/languages_hint"
+        app:layout_constraintTop_toBottomOf="@+id/languages_hint"
+        tools:text="Ukrainian" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="currencies_hint,currencies_label,languages_label,languages_hint" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

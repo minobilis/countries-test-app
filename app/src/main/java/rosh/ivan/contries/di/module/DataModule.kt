@@ -13,7 +13,6 @@ import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import rosh.ivan.contries.common.AndroidResourceProvider
-import rosh.ivan.contries.feature.list.CountriesInput
 import rosh.ivan.contries.feature.list.CountriesViewState
 import rosh.ivan.countries.data.extra.Constants
 import rosh.ivan.countries.data.remote.RemoteCountryDataSource

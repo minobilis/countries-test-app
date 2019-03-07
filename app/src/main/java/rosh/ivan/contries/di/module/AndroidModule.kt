@@ -2,6 +2,7 @@ package rosh.ivan.contries.di.module
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
+import rosh.ivan.contries.feature.details.CountryDetailsFragment
 import rosh.ivan.contries.feature.list.CountriesFragment
 
 /**
@@ -10,6 +11,10 @@ import rosh.ivan.contries.feature.list.CountriesFragment
 
 @Module
 abstract class AndroidModule {
+
     @ContributesAndroidInjector
     abstract fun LoginSelectionFragmentInjector(): CountriesFragment
+
+    @ContributesAndroidInjector
+    abstract fun CountryDetailsFragmentInjector(): CountryDetailsFragment
 }

@@ -8,4 +8,13 @@
     <string name="unit_million_short">M</string>
     <string name="unit_thousand_short">K</string>
     <string name="flag_hint">Flag</string>
+    <string name="countries_screen_title">List of countries</string>
+    <string name="country_details_screen_title">Country details</string>
+    <string name="capital_hint">Capital</string>
+    <string name="regional_blocks_hint">Regional blocks</string>
+    <string name="region_hint">Region</string>
+    <string name="area_hint">Area</string>
+    <string name="borders_hint">Borders</string>
+    <string name="currencies_hint">Currencies</string>
+    <string name="languages_hint">Languages</string>
 </resources>

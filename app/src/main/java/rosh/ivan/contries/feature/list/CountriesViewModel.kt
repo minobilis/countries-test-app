@@ -8,6 +8,7 @@ import rosh.ivan.contries.base.BaseViewModel
 import rosh.ivan.contries.common.scheduler.SchedulerProvider
 import rosh.ivan.contries.feature.list.CountriesViewState.DATA
 import rosh.ivan.contries.feature.list.CountriesViewState.LOADING
+import rosh.ivan.contries.feature.list.CountriesViewState.NAVIGATE
 import rosh.ivan.contries.feature.list.CountriesViewState.ERROR
 import rosh.ivan.countries.domain.usecase.GetAllCountriesUseCase
 import javax.inject.Inject
@@ -34,6 +35,12 @@ class CountriesViewModel @Inject constructor(
                 .retryWhen { input.refreshRequests.toFlowable(BackpressureStrategy.LATEST) }
                 .subscribeUntilDestroyed(
                         { viewStates.accept(DATA(it)) },
+                        { viewStates.accept(ERROR(it)) }
+                )
+
+        input.listItemClicks
+                .subscribeUntilDestroyed(
+                        { commands.accept(NAVIGATE(it)) },
                         { viewStates.accept(ERROR(it)) }
                 )
     }

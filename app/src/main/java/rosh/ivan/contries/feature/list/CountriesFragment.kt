@@ -1,5 +1,6 @@
 package rosh.ivan.contries.feature.list
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProviders
@@ -11,6 +12,7 @@ import rosh.ivan.contries.R
 import rosh.ivan.contries.base.BaseFragment
 import rosh.ivan.contries.common.ui.ListDividerDecoration
 import rosh.ivan.contries.feature.list.CountriesViewState.*
+import rosh.ivan.contries.feature.list.adapter.Callback
 import rosh.ivan.contries.feature.list.adapter.CountriesAdapter
 
 
@@ -21,6 +23,22 @@ class CountriesFragment : BaseFragment() {
     private lateinit var viewModel: CountriesViewModel
 
     private var countriesAdapter: CountriesAdapter? = null
+
+    private var callback: Callback? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        if (context is Callback) {
+            this.callback = context
+        }
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+
+        this.callback = null
+    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -40,6 +58,8 @@ class CountriesFragment : BaseFragment() {
 
     override fun onStart() {
         super.onStart()
+
+        activity?.setTitle(R.string.countries_screen_title)
 
         bindInput()
 
@@ -63,6 +83,10 @@ class CountriesFragment : BaseFragment() {
             is DATA -> {
                 showLoading(false)
                 countriesAdapter?.submitList(viewState.countries)
+            }
+
+            is NAVIGATE -> {
+                callback?.onCountryClick(viewState.country)
             }
 
             is ERROR -> {
