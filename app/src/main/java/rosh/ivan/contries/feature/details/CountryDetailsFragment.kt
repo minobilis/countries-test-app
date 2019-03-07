@@ -6,6 +6,12 @@ import androidx.core.os.bundleOf
 import kotlinx.android.synthetic.main.details_fragment.*
 import rosh.ivan.contries.R
 import rosh.ivan.contries.base.BaseFragment
+import android.graphics.drawable.PictureDrawable
+import android.net.Uri
+import com.bumptech.glide.RequestBuilder
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
+import rosh.ivan.contries.common.svg.SvgSoftwareLayerSetter
+import rosh.ivan.contries.common.svg.GlideApp
 
 
 class CountryDetailsFragment : BaseFragment() {
@@ -23,6 +29,8 @@ class CountryDetailsFragment : BaseFragment() {
     private lateinit var borders: String
     private lateinit var currencies: String
     private lateinit var languages: String
+
+    private var requestBuilder: RequestBuilder<PictureDrawable>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +69,16 @@ class CountryDetailsFragment : BaseFragment() {
         borders_label.text = borders
         currencies_label.text = currencies
         languages_label.text = languages
+
+        requestBuilder = GlideApp.with(this)
+            .`as`(PictureDrawable::class.java)
+            .transition(withCrossFade())
+            .listener(SvgSoftwareLayerSetter())
+
+        if (flagUrl.isNotEmpty()) {
+            val uri = Uri.parse(flagUrl)
+            requestBuilder?.load(uri)?.into(flag_details_image)
+        }
     }
 
     companion object {

@@ -84,4 +84,5 @@ dependencies {
 
     //Other
     implementation "com.jakewharton.threetenabp:threetenabp:$threetenabp_version"
+    implementation 'com.caverock:androidsvg:1.2.1'
 }
